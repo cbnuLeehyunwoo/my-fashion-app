@@ -1,0 +1,178 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      style='--select-button-svg: url'data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(96,118,138)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e'; font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="flex items-center bg-white p-4 pb-2 justify-between">
+          <!-- 뒤로가기 버튼 -->
+          <button
+            class="text-[#121416] flex size-12 shrink-0 items-center justify-center p-0 cursor-pointer"
+            data-icon="ArrowLeft"
+            data-size="24px"
+            data-weight="regular"
+            onclick="history.back();"
+            aria-label="뒤로가기"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </button>
+          <h2 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Trending</h2>
+        </div>
+        <div class="flex gap-3 p-3 overflow-x-hidden">
+          <!-- 필터/카테고리 탭 -->
+          <a class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f1f2f4] pl-4 pr-4 cursor-pointer" href="trending-all.html">
+            <p class="text-[#121416] text-sm font-medium leading-normal">All</p>
+          </a>
+          <a class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f1f2f4] pl-4 pr-4 cursor-pointer" href="trending-clothing.html">
+            <p class="text-[#121416] text-sm font-medium leading-normal">Clothing</p>
+          </a>
+          <a class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f1f2f4] pl-4 pr-4 cursor-pointer" href="trending-shoes.html">
+            <p class="text-[#121416] text-sm font-medium leading-normal">Shoes</p>
+          </a>
+          <a class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f1f2f4] pl-4 pr-4 cursor-pointer" href="trending-accessories.html">
+            <p class="text-[#121416] text-sm font-medium leading-normal">Accessories</p>
+          </a>
+        </div>
+        <h2 class="text-[#121416] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Trending Now</h2>
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+          <!-- 트렌딩 상품 목록 -->
+          <a class="flex flex-col gap-3 pb-3 cursor-pointer" href="product-detail-cozy-knitwear.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBixesuWWb6eOpaLHK5WAv2pmNrBCsnCgcnXZZniGvbyLYTzHwoXna7aEOaI_UNv1cOmjnrDy0sKZIS5WxZ6Wm2x7vJNRwMKEk2zy2QU_T81BNcZIX43hOar9lT-QmBw5pGWphH2t1w3-gcILIFVGMckMKpohq5Q5Pu5E9AFbu9agVGdWmqmR4EoN730a4A2PcF6P1i5p9Og6lgEQZ2t-JTFsqHHMVGDMh-q49pSrmkvzXGcXswxAf30IR4Neky3_gP9oYWp77cS6c");'
+            ></div>
+            <div>
+              <p class="text-[#121416] text-base font-medium leading-normal">Cozy Knitwear</p>
+              <p class="text-[#6a7681] text-sm font-normal leading-normal">120 items</p>
+            </div>
+          </a>
+          <a class="flex flex-col gap-3 pb-3 cursor-pointer" href="product-detail-street-style-sneakers.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBw4sxogibqck2GsmFR5_LYXH2VAVaPR0ll8P4k6-4pvY7oMQsEMZqNfWpsVD0vtEH18l531uj3UaELzd75f0jRqpAOsqvauJwOLHL5l8ggyy0p7VjRpQ8dMU3eK7s-C3XpgWq7q-4DB40OTJcL1B6P7onLUu8jLXQWYsBV7844Pzn4CR1DtKjMfQApDVpibqKQnsFY2SLeOab9kIjbERgN9aVeh9qUpSnRYFbrzcwyH5Ko3RR73iRYvH0TEd-BM9ZBUqp1lLi9efM");'
+            ></div>
+            <div>
+              <p class="text-[#121416] text-base font-medium leading-normal">Street Style Sneakers</p>
+              <p class="text-[#6a7681] text-sm font-normal leading-normal">85 items</p>
+            </div>
+          </a>
+          <a class="flex flex-col gap-3 pb-3 cursor-pointer" href="product-detail-statement-bags.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj3JmI57JFalheikzwytDaf8IBOqScDeTpSNTKLuqF55LNB8DokkSdonEsWqCGjsO0QObgScKRuKG2fKg04AkXaLBMukLMNcaIyFhBLJ1yBUaScTKUPp9RUClvjrIdxX4BMnKT_va6z4mY2XuaFHNsd57Xt962KZf6DBgEHpfHtLiXLWnTludHhI_OZeRVxKI4M12NdIU-BNvzZ9VeGf-zyayHXnSa_lY399Zngn5q-Jdip6CP4e2yPzHbKZBLbBCTX2eoQjlU4gU");'
+            ></div>
+            <div>
+              <p class="text-[#121416] text-base font-medium leading-normal">Statement Bags</p>
+              <p class="text-[#6a7681] text-sm font-normal leading-normal">60 items</p>
+            </div>
+          </a>
+          <a class="flex flex-col gap-3 pb-3 cursor-pointer" href="product-detail-winter-outerwear.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFJfxAgFwc-gjtnsyKIqaXUDfin5BfuaGFnsDbs2IkBsjIJQwuQRGoZr7C468muuxSjrA3SR0VhmMZdLRMmpG-63iQ6yz_IBPbPZ6slU8Ap8hmvRML5c5eo61U9fKh_GsS3iyNkX_ZDiPRqXiYX-Wc9MyAg5pKAgdhQX8N-rQXeITxqQK5GB8wNE835gXJhEK5PEDpBF4jwIC1hqYM6JdHwpVMrMOW2xJdbqQ1LGnzHq9I_pLoi7XMnse0MRtFQoK87aWd9m-UsXA");'
+            ></div>
+            <div>
+              <p class="text-[#121416] text-base font-medium leading-normal">Winter Outerwear</p>
+              <p class="text-[#6a7681] text-sm font-normal leading-normal">150 items</p>
+            </div>
+          </a>
+          <a class="flex flex-col gap-3 pb-3 cursor-pointer" href="category-layered-looks.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmkSYHyeWmSgAY-QxJlMADBP-ogf96NQ29ft0jknpmqTupjxTXoNBMewYENyRZBQrl_VqT2LzC3eQfnFEuveejjIZCFrip50z7l7OojL7AvCBwzE14W8f7glWswbgTNcAzEvOHMcRXj6c_k0LnfcpKf-AqEkoFqDwjWDek8jbraB_S-n-upMD6OnVT1l2iZ1b65fv-88IG3T5s2xxQsls8cOkBLXDPbU_78GEzT0WSp2nBpXFt3fKRKHIV2JOvm1mycDWbxMNHJrw");'
+            ></div>
+            <div>
+              <p class="text-[#121416] text-base font-medium leading-normal">Layered Looks</p>
+              <p class="text-[#6a7681] text-sm font-normal leading-normal">90 items</p>
+            </div>
+          </a>
+          <a class="flex flex-col gap-3 pb-3 cursor-pointer" href="product-detail-classic-boots.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUn330MZ4vQSIgK7zTG-2yj-gsApLHQ086XxOdNqMCsjtpmp8uRu9SESYpOUPvaDfbgftPoP5Dx20x13ZmKZa_S9YYUhojtpGl_wOpNWTL8w2WupQLN90fAmRooKg3TMv5PKx4i-ApBpZeSd5Wy3fxPCpOsa3fkf6woR5oumaioyRGlfOZ-KrvSNMPZiOV3wAqO-5lK-w68A9N7zZQvwV3R85RKDk5em90NonJXR0ezf5H0X-8WMaon7y7N31NfR3WYZx0wXKx5Mg");'
+            ></div>
+            <div>
+              <p class="text-[#121416] text-base font-medium leading-normal">Classic Boots</p>
+              <p class="text-[#6a7681] text-sm font-normal leading-normal">75 items</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div>
+ <div class="flex gap-2 border-t border-[#f0f2f5] bg-white px-4 pb-3 pt-2">
+          <!-- 하단 내비게이션 - Home -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="index.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+          </a>
+          <!-- 하단 내비게이션 - Search -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="search.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Search</p>
+          </a>
+          <!-- 하단 내비게이션 - Upload (현재 페이지와 관련) -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#111518]" href="upload_image.html">
+            <div class="text-[#111518] flex h-8 items-center justify-center" data-icon="Camera" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#111518] text-xs font-medium leading-normal tracking-[0.015em]">Upload</p>
+          </a>
+          <!-- 하단 내비게이션 - Favorites -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="favorites.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="Heart" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Favorites</p>
+          </a>
+          <!-- 하단 내비게이션 - Profile -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="profile.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+          </a>
+        </div>
+        <div class="h-5 bg-white"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,508 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      // 사이즈 선택을 처리하는 예시 함수 (페이지 이동 아님)
+      function selectSize(size) {
+        console.log("Selected size:", size);
+        // 여기에 선택된 사이즈에 따른 UI 업데이트 로직 추가
+        // 예: 모든 사이즈 버튼의 active 클래스를 제거하고, 클릭된 버튼에 active 클래스 추가
+        document.querySelectorAll('.size-option').forEach(btn => {
+          btn.classList.remove('bg-[#0b80ee]', 'text-white');
+          btn.classList.add('bg-[#f1f2f4]', 'text-[#121416]');
+        });
+        const selectedBtn = document.querySelector(`.size-option[data-size='${size}']`);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('bg-[#f1f2f4]', 'text-[#121416]');
+          selectedBtn.classList.add('bg-[#0b80ee]', 'text-white');
+        }
+      }
+
+      // 좋아요 버튼을 처리하는 예시 함수 (페이지 이동 아님)
+      function handleLike(buttonElement, reviewId) {
+        console.log("Liked review:", reviewId);
+        // 여기에 좋아요 수 업데이트 및 UI 변경 (예: 색상 변경) 로직 추가
+        const countElement = buttonElement.querySelector('p');
+        let currentLikes = parseInt(countElement.textContent);
+        countElement.textContent = currentLikes + 1;
+        // 실제로는 서버에 좋아요 요청을 보냅니다.
+      }
+
+      // 싫어요 버튼을 처리하는 예시 함수 (페이지 이동 아님)
+      function handleDislike(buttonElement, reviewId) {
+        console.log("Disliked review:", reviewId);
+        // 여기에 싫어요 수 업데이트 및 UI 변경 로직 추가
+        const countElement = buttonElement.querySelector('p');
+        let currentDislikes = parseInt(countElement.textContent);
+        countElement.textContent = currentDislikes + 1;
+        // 실제로는 서버에 싫어요 요청을 보냅니다.
+      }
+
+      // 장바구니에 추가하는 예시 함수 (페이지 이동 아님)
+      function addToCart(productId) {
+        console.log("Adding to cart:", productId);
+        alert(productId + " 상품이 장바구니에 추가되었습니다!");
+        // 여기에 장바구니 데이터 처리 로직 (예: AJAX 요청) 추가
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="flex items-center bg-white p-4 pb-2 justify-between">
+          <!-- 뒤로가기 버튼 -->
+          <button
+            class="text-[#121416] flex size-12 shrink-0 items-center justify-center p-0 cursor-pointer"
+            data-icon="ArrowLeft"
+            data-size="24px"
+            data-weight="regular"
+            onclick="history.back();"
+            aria-label="뒤로가기"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </button>
+          <h2 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Product Detail</h2>
+          <!-- 제목이 "Style Analysis"가 아니라 "Product Detail"이 더 적절해 보여 수정했습니다. -->
+        </div>
+        <div class="@container">
+          <div class="@[480px]:px-4 @[480px]:py-3">
+            <!-- 메인 상품 이미지 (클릭 시 갤러리/확대 보기) -->
+            <a
+              class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-white @[480px]:rounded-xl min-h-80 cursor-pointer"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0cf6PLs5TIsUswx-CnqSFCDpdoCegfPnpPn-MAdMVguVtsELsGEQg9bfM7AJZrJ-QViW9_5ZMrhywPFJW6ZVsufpUS1LcgooRESIyfWVME7q7hXEmF7uZReED8Dq4MrqI4awHp8nd4hM8cdCa-dQOqKYgT7-rLhQ4jX4WuXBJ1UV10EaSSmLxGSXMuFliDjwK2Vnizmm-7QAUvLqTK7yYDX6cV9SkV15Y36WgcAa9swX2lEKF88nwJHTlm6GgS4g4Z3GwaWy1uI");'
+              href="product-image-gallery.html"
+              aria-label="상품 이미지 갤러리 보기"
+            ></a>
+          </div>
+        </div>
+        <h1 class="text-[#121416] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-3 pt-5">Modern Fit Blazer</h1>
+        <!-- "By StyleHub" 브랜드/판매자 링크 -->
+        <a class="text-[#6a7681] text-sm font-normal leading-normal pb-3 pt-1 px-4 underline cursor-pointer" href="brand-stylehub.html">By StyleHub</a>
+        <p class="text-[#121416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+          A contemporary blazer with a tailored fit, perfect for both formal and casual occasions. Worn by actor Park Seo-joon in the drama 'Itaewon Class'.
+        </p>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Brand & Model</h3>
+        <p class="text-[#121416] text-base font-normal leading-normal pb-3 pt-1 px-4">Brand: StyleHub, Model: Modern Fit Blazer</p>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Price</h3>
+        <p class="text-[#121416] text-base font-normal leading-normal pb-3 pt-1 px-4">$149.99</p>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Size</h3>
+        <div class="flex gap-3 p-3 flex-wrap pr-4">
+          <!-- 사이즈 선택 버튼 (JS로 상태 관리) -->
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f1f2f4] pl-4 pr-4 cursor-pointer size-option" data-size="S" onclick="selectSize('S')">
+            <p class="text-[#121416] text-sm font-medium leading-normal">S</p>
+          </div>
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f1f2f4] pl-4 pr-4 cursor-pointer size-option" data-size="M" onclick="selectSize('M')">
+            <p class="text-[#121416] text-sm font-medium leading-normal">M</p>
+          </div>
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f1f2f4] pl-4 pr-4 cursor-pointer size-option" data-size="L" onclick="selectSize('L')">
+            <p class="text-[#121416] text-sm font-medium leading-normal">L</p>
+          </div>
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f1f2f4] pl-4 pr-4 cursor-pointer size-option" data-size="XL" onclick="selectSize('XL')">
+            <p class="text-[#121416] text-sm font-medium leading-normal">XL</p>
+          </div>
+        </div>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Color</h3>
+        <div class="flex flex-wrap gap-5 p-4">
+          <!-- 색상 선택 (라디오 버튼) - 변경 없음 -->
+          <label
+            class="size-10 rounded-full border border-[#dde1e3] ring-[color-mix(in_srgb,#121416_50%,_transparent)] has-[:checked]:border-[3px] has-[:checked]:border-white has-[:checked]:ring"
+            style="background-color: rgb(0, 0, 0);"
+          >
+            <input type="radio" class="invisible" name="color_selection" value="black" checked="" />
+          </label>
+          <label
+            class="size-10 rounded-full border border-[#dde1e3] ring-[color-mix(in_srgb,#121416_50%,_transparent)] has-[:checked]:border-[3px] has-[:checked]:border-white has-[:checked]:ring"
+            style="background-color: rgb(255, 255, 255);"
+          >
+            <input type="radio" class="invisible" name="color_selection" value="white" />
+          </label>
+          <label
+            class="size-10 rounded-full border border-[#dde1e3] ring-[color-mix(in_srgb,#121416_50%,_transparent)] has-[:checked]:border-[3px] has-[:checked]:border-white has-[:checked]:ring"
+            style="background-color: rgb(0, 0, 255);"
+          >
+            <input type="radio" class="invisible" name="color_selection" value="blue" />
+          </label>
+        </div>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Material</h3>
+        <p class="text-[#121416] text-base font-normal leading-normal pb-3 pt-1 px-4">Wool Blend</p>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Purchase Link</h3>
+        <!-- 구매 링크 -->
+        <a class="text-[#6a7681] text-base font-normal leading-normal pb-3 pt-1 px-4 underline cursor-pointer" href="https://example.com/modern-fit-blazer-buy" target="_blank" rel="noopener noreferrer">Buy Now</a>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Similar Items</h3>
+        <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div class="flex items-stretch p-4 gap-3">
+            <!-- 유사 상품 링크 -->
+            <a class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40 cursor-pointer" href="product-detail-trench-coat.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDK7irX5jTW5_zlqtjxQgscd2FqqRBN2y_BuB0nkvXp9t7CrX4P5I8APIB0sQuxmnChIIdVv_eny5IFI6-KY2UtlMVqk3EBOXGyIX8RZmTSl9gT_Ve1As5n3n7Py77GW94awZ5SWVBNrFmPSVrvhlxRvISuuvQ7edM3Fjd5U2DwilJAimAyJVt8oe04gvwSutCG4RuEgUTAZn0b6iIDMawm9s0g1d_WbRX8iz2ettigCmv-3hEVpdUlEAvVwOKmfTzJ22JnyrThw6s");'
+              ></div>
+              <div>
+                <p class="text-[#121416] text-base font-medium leading-normal">Classic Trench Coat</p>
+                <p class="text-[#6a7681] text-sm font-normal leading-normal">$199.99</p>
+              </div>
+            </a>
+            <a class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40 cursor-pointer" href="product-detail-slim-fit-trousers.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNKkBLkWb3hcBnOZumqSRmZnrs1NzD9oyaRJ-ZDsWl8gpg1DnxWCbUl8LYs5JxJflZk0y4pijZn4kuJ5wtv0SNgm7PBZ502RsZXDWS8-NNaW97eYpNUqyhg3NsHayuIds48F_Dg8EocdalInUJ62IXsN7I4NDxEObUJ8XBcat5z6OVhURKvRnzpiYWyK4VzgcqyIujxfagi1qY9dyYDK5WROaOxfGzHkai6auh3eNTAdXjuDOMKkBIUl_xFBzK6xP_LHQuKu2_m9E");'
+              ></div>
+              <div>
+                <p class="text-[#121416] text-base font-medium leading-normal">Slim Fit Trousers</p>
+                <p class="text-[#6a7681] text-sm font-normal leading-normal">$79.99</p>
+              </div>
+            </a>
+            <a class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40 cursor-pointer" href="product-detail-oxford-shoes.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCNcXc2xsTq0E_ddCTKwdp0eD4pz6oe6SLp87IksV9z5QCZMAwPlo4vnwJR1e2qoP8e-1Z09aVbv91jRg63WyWSKHupbyYuQeeOHa0yJI8V_ENvDJkTwbaIgXcnf4XqhoR-wpBTCFUrmcSCuNw_49qUfT8dpgkR0alS37QoQv9uyZKEhGqT424tHTci69YIfuLJTQhgBpcAJ7MVs6uZB4lb0XDv32RNft8rzOOArtVH8FP_uLMXvrhzM1C0PrJDhVgzjmmzbehhUw");'
+              ></div>
+              <div>
+                <p class="text-[#121416] text-base font-medium leading-normal">Leather Oxford Shoes</p>
+                <p class="text-[#6a7681] text-sm font-normal leading-normal">$129.99</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Styling Tips</h3>
+        <p class="text-[#121416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+          Pair this blazer with a white t-shirt and jeans for a casual look, or with a dress shirt and trousers for a formal setting.
+        </p>
+            <!-- 리뷰 작성 버튼 -->
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f1f2f4] text-[#121416] text-base font-bold leading-normal tracking-[0.015em] flex-1 mx-4"
+              onclick="window.location.href='write-review.html';"
+            >
+              <span class="truncate">Write review</span>
+            </button>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Reviews</h3>
+        <div class="flex flex-wrap gap-x-8 gap-y-6 p-4">
+          <div class="flex flex-col gap-2">
+            <p class="text-[#121416] text-4xl font-black leading-tight tracking-[-0.033em]">4.5</p>
+            <div class="flex gap-0.5">
+              <div class="text-[#121416]" data-icon="Star" data-size="18px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="18px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="18px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="18px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="18px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-[#121416] text-base font-normal leading-normal">120 reviews</p>
+          </div>
+          <div class="grid min-w-[200px] max-w-[400px] flex-1 grid-cols-[20px_1fr_40px] items-center gap-y-3">
+            <p class="text-[#121416] text-sm font-normal leading-normal">5</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dde1e3]"><div class="rounded-full bg-[#121416]" style="width: 40%;"></div></div>
+            <p class="text-[#6a7681] text-sm font-normal leading-normal text-right">40%</p>
+            <p class="text-[#121416] text-sm font-normal leading-normal">4</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dde1e3]"><div class="rounded-full bg-[#121416]" style="width: 30%;"></div></div>
+            <p class="text-[#6a7681] text-sm font-normal leading-normal text-right">30%</p>
+            <p class="text-[#121416] text-sm font-normal leading-normal">3</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dde1e3]"><div class="rounded-full bg-[#121416]" style="width: 15%;"></div></div>
+            <p class="text-[#6a7681] text-sm font-normal leading-normal text-right">15%</p>
+            <p class="text-[#121416] text-sm font-normal leading-normal">2</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dde1e3]"><div class="rounded-full bg-[#121416]" style="width: 10%;"></div></div>
+            <p class="text-[#6a7681] text-sm font-normal leading-normal text-right">10%</p>
+            <p class="text-[#121416] text-sm font-normal leading-normal">1</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dde1e3]"><div class="rounded-full bg-[#121416]" style="width: 5%;"></div></div>
+            <p class="text-[#6a7681] text-sm font-normal leading-normal text-right">5%</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-8 overflow-x-hidden bg-white p-4">
+          <div class="flex flex-col gap-3 bg-white">
+            <!-- 리뷰어 프로필 링크 -->
+            <a class="flex items-center gap-3 cursor-pointer" href="user-profile-sophia.html">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALtHSqhzq0fXX2zJKJc87ri3KTKEblG2AsR7FppcY3Bt0Vh80zc0uhuaLIVdXdAbGQQIFdCLL51pWRBKaW4UKPsPBPPiQr9bpbEhwG7LrmQcITRlCZN2-s0BngKjeVJIzb_1gcLFPHaMKo3QGkb0GlhAYXSzLMMEIDHtrgLaQei7cFOPviwtQyXF2_UiFX8pVbjQ0stzwRCWnERFhsJRhpwN5UfcS8kjQ3XjYI1tXi6qfgNDud0M7U7zaO4oMmd-lMALUYeIuuUg4");'
+              ></div>
+              <div class="flex-1">
+                <p class="text-[#121416] text-base font-medium leading-normal">Sophia Clark</p>
+                <p class="text-[#6a7681] text-sm font-normal leading-normal">2 weeks ago</p>
+              </div>
+            </a>
+            <div class="flex gap-0.5">
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-[#121416] text-base font-normal leading-normal">
+              This blazer is fantastic! The fit is perfect, and the material feels high-quality. I've received many compliments on it.
+            </p>
+            <div class="flex gap-9 text-[#6a7681]">
+              <button class="flex items-center gap-2 cursor-pointer" onclick="handleLike(this, 'review1')">
+                <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-inherit">25</p>
+              </button>
+              <button class="flex items-center gap-2 cursor-pointer" onclick="handleDislike(this, 'review1')">
+                <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-inherit">2</p>
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 bg-white">
+            <!-- 리뷰어 프로필 링크 -->
+            <a class="flex items-center gap-3 cursor-pointer" href="user-profile-ethan.html">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCpn05SKTz_FPMMnFSuiSRawwz8Ky_VSUNrlzQz3mFgm76JB2fVZqRNo2NL1WDu93D3no9ZVtnNknIxsnyYFBKyute3xUaLMh1jNCDbrl-Nqa-RICgRbmJOAmIImWVlO_epeolfiV-j0UrjqpR6pDR91UQKQtzUF3w7-_L2ygee8X8ShCY-7O--NNw2yMssawFm4VBahzhtlnpPaa1Eel0Yt4y9EFjYRaOoY8ZH-ET6gaWlihGmBQ3vRAHWBI-PY0wI5jPpiXL6uw");'
+              ></div>
+              <div class="flex-1">
+                <p class="text-[#121416] text-base font-medium leading-normal">Ethan Bennett</p>
+                <p class="text-[#6a7681] text-sm font-normal leading-normal">1 month ago</p>
+              </div>
+            </a>
+            <div class="flex gap-0.5">
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#121416]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-[#bec5ca]" data-icon="Star" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-[#121416] text-base font-normal leading-normal">
+              Great blazer for the price. The color is rich, and it's comfortable to wear. Could use more size options.
+            </p>
+            <div class="flex gap-9 text-[#6a7681]">
+              <button class="flex items-center gap-2 cursor-pointer" onclick="handleLike(this, 'review2')">
+                <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-inherit">18</p>
+              </button>
+              <button class="flex items-center gap-2 cursor-pointer" onclick="handleDislike(this, 'review2')">
+                <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-inherit">3</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <h3 class="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">User Photos</h3>
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+          <!-- 사용자 사진 링크 -->
+          <a class="flex flex-col gap-3 cursor-pointer" href="user-photo-1.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkl0Ls5jYxqnKfEc1cFXhHurE5bJTxe3T46sqY03HgRTjYj0OLJ-gzUccFyb3urrkF2J4qOuruL4hjhyDgg_6o96PXYkthVb85NKWPnPAl0ZfP9HofWGb_97pMCpIK2m_clIzFVeDR3uy5ejPYFtB6q_W4ClQkEBEHPUO-FFvIXQFXuzBYsRqRcdwSZxIXGEe9DySTJ-YUuHDFHYegPa1jjYgbgeqLXyVo9vwwEqv449vaQMcd4kUb1K9x4IAO68yCPPsTYuitmxQ");'
+            ></div>
+          </a>
+          <a class="flex flex-col gap-3 cursor-pointer" href="user-photo-2.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDR7AX0IzSCzJk0QyhOoSAjU_4hZxiKIX10F6QheDwDiLchluko_6JBqH01YhzN1-VgG6GOrR--cDZiFWHLoopUa5cKEE-58efEOmBE_qE6fCm_7CjvJZPfdUMdPpx7F0SLil5X4kLqDh05TOtplgZePAG054Ar714AfO8xtMfjfkrT1Qbwff0-7zfiYq3SpMjhwTJXF1UrJEvMBrSMIPxo7p6aT-JiuZhNK_1pGs0Qu6lUyetAqehTLCQPP8");'
+            ></div>
+          </a>
+          <a class="flex flex-col gap-3 cursor-pointer" href="user-photo-3.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCY53hY87mwnDevj2qXqhv2f_wtIsCaZSpRQg8K7V0854__gNgMmOzJCvqnYcI30dI6PfqyXxoBDZ1seOo2Am42wtzZbtssToLPSkFf1oUFeI4oYgB8xCpFKfvz7ET38Rtq4UwKcBhNyA39ANzjKFh4zWPLihJnKOUSCULiTD0O8Yy6C2Ib2Ez9CSuWLVGzc5oKzlcrry4qVCiPhkCtoGoM8hYmxCQtvyTuT_wJUZqyk82K11gwNApsrMqcDlFZUdCNdrZwACsrUHE");'
+            ></div>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="flex justify-stretch">
+          <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-between">
+            <!-- 장바구니에 추가 버튼 -->
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f1f2f4] text-[#121416] text-base font-bold leading-normal tracking-[0.015em] flex-1"
+              onclick="addToCart('Modern Fit Blazer')"
+            >
+              <span class="truncate">Add to Cart</span>
+            </button>
+            <!-- 바로 구매 버튼 -->
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#dce8f3] text-[#121416] text-base font-bold leading-normal tracking-[0.015em] flex-1"
+              onclick="window.location.href='checkout.html?productId=blazer123';"
+            >
+              <span class="truncate">Buy Now</span>
+            </button>
+          </div>
+        </div>
+               <div class="flex gap-2 border-t border-[#f0f2f5] bg-white px-4 pb-3 pt-2">
+          <!-- 하단 내비게이션 - Home -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="index.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+          </a>
+          <!-- 하단 내비게이션 - Search -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="search.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Search</p>
+          </a>
+          <!-- 하단 내비게이션 - Upload (현재 페이지와 관련) -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#111518]" href="upload_image.html">
+            <div class="text-[#111518] flex h-8 items-center justify-center" data-icon="Camera" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#111518] text-xs font-medium leading-normal tracking-[0.015em]">Upload</p>
+          </a>
+          <!-- 하단 내비게이션 - Favorites -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="favorites.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="Heart" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Favorites</p>
+          </a>
+          <!-- 하단 내비게이션 - Profile -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="profile.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+          </a>
+        </div>
+        <div class="h-5 bg-white"></div>
+      </div>
+    </div>
+  </body>
+</html>

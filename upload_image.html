@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      // 이미지 선택 후 AI 분석 페이지로 이동하는 함수
+      function handleImageSelection() {
+        // 실제 앱에서는 선택된 이미지를 서버에 업로드하거나
+        // 다음 페이지로 전달하는 로직이 여기에 추가됩니다.
+        // 예를 들어, FileReader를 사용하여 이미지를 읽고 base64로 인코딩하여 URL 파라미터로 넘길 수 있지만
+        // 이는 URL 길이 제한이 있어 큰 이미지에는 적합하지 않습니다.
+        // 여기서는 단순히 AI 분석 페이지로 이동만 합니다.
+        console.log("Image selected. Redirecting to AI analysis page...");
+        window.location.href = 'ai_analysis_page.html'; // AI 분석 페이지 URL
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="flex items-center bg-white p-4 pb-2 justify-between">
+          <!-- 닫기 (X) 버튼: 이전 페이지로 돌아가거나 메인 페이지로 이동 -->
+          <button
+            class="text-[#111518] flex size-12 shrink-0 items-center justify-center p-0 cursor-pointer"
+            data-icon="X"
+            data-size="24px"
+            data-weight="regular"
+            onclick="history.back();"
+            aria-label="Close"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+              ></path>
+            </svg>
+          </button>
+          <h2 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Upload Image</h2>
+        </div>
+        <h1 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 text-center pb-3 pt-5">Choose an image to upload</h1>
+        <div class="flex justify-center">
+          <div class="flex flex-1 gap-3 max-w-[480px] flex-col items-stretch px-4 py-3">
+            <!-- 갤러리에서 선택 버튼: 숨겨진 파일 입력 필드를 클릭하여 갤러리 열기 -->
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#0b80ee] text-white text-base font-bold leading-normal tracking-[0.015em] w-full"
+              onclick="document.getElementById('galleryInput').click();"
+            >
+              <span class="truncate">Choose from Gallery</span>
+            </button>
+            <input type="file" id="galleryInput" accept="image/*" style="display: none;" onchange="handleImageSelection();" />
+            <!-- 사진 찍기 버튼: 숨겨진 파일 입력 필드를 클릭하여 카메라 열기 -->
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f0f2f5] text-[#111518] text-base font-bold leading-normal tracking-[0.015em] w-full"
+              onclick="document.getElementById('cameraInput').click();"
+            >
+              <span class="truncate">Take a Photo</span>
+            </button>
+            <input type="file" id="cameraInput" accept="image/*" capture="camera" style="display: none;" onchange="handleImageSelection();" />
+          </div>
+        </div>
+      </div>
+      <div>
+                <div class="flex gap-2 border-t border-[#f0f2f5] bg-white px-4 pb-3 pt-2">
+          <!-- 하단 내비게이션 - Home -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="index.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+          </a>
+          <!-- 하단 내비게이션 - Search -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="search.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Search</p>
+          </a>
+          <!-- 하단 내비게이션 - Upload (현재 페이지와 관련) -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#111518]" href="upload_image.html">
+            <div class="text-[#111518] flex h-8 items-center justify-center" data-icon="Camera" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#111518] text-xs font-medium leading-normal tracking-[0.015em]">Upload</p>
+          </a>
+          <!-- 하단 내비게이션 - Favorites -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="favorites.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="Heart" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Favorites</p>
+          </a>
+          <!-- 하단 내비게이션 - Profile -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="profile.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+          </a>
+        </div>
+        <div class="h-5 bg-white"></div>
+      </div>
+    </div>
+  </body>
+</html>

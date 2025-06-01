@@ -1,0 +1,236 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="flex items-center bg-white p-4 pb-2 justify-between">
+          <h2 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12">StyleHub</h2>
+          <div class="flex w-12 items-center justify-end">
+            <!-- 검색 버튼: 검색 페이지로 연결 -->
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-[#111518] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0"
+              onclick="window.location.href='search.html';"
+            >
+              <div class="text-[#111518]" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="pb-3">
+          <div class="flex border-b border-[#dbe1e6] px-4 gap-8">
+            <!-- For You 탭: 해당 카테고리 페이지로 연결 -->
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#111518] text-[#111518] pb-[13px] pt-4" href="for-you.html">
+              <p class="text-[#111518] text-sm font-bold leading-normal tracking-[0.015em]">For You</p>
+            </a>
+            <!-- Trending 탭: 해당 카테고리 페이지로 연결 -->
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#60768a] pb-[13px] pt-4" href="trending.html">
+              <p class="text-[#60768a] text-sm font-bold leading-normal tracking-[0.015em]">Trending</p>
+            </a>
+            <!-- New Arrivals 탭: 해당 카테고리 페이지로 연결 -->
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#60768a] pb-[13px] pt-4" href="new-arrivals.html">
+              <p class="text-[#60768a] text-sm font-bold leading-normal tracking-[0.015em]">New Arrivals</p>
+            </a>
+            <!-- Sales 탭: 해당 카테고리 페이지로 연결 -->
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#60768a] pb-[13px] pt-4" href="sales.html">
+              <p class="text-[#60768a] text-sm font-bold leading-normal tracking-[0.015em]">Sales</p>
+            </a>
+          </div>
+        </div>
+        <div class="flex w-full overflow-hidden px-4 py-3">
+          <div class="flex min-h-min flex-row items-start justify-start gap-3">
+            <!-- 패션 위크 카테고리: 카테고리 상세 페이지로 연결 (div를 a 태그로 변경) -->
+            <a class="flex flex-1 flex-col justify-center gap-2 w-24 text-left" href="category-fashion-week.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/5] bg-cover rounded-xl"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC39q4msnXMZPThTGApZwW4Yg7SheETqRm57QRj1yHtx8aaLqH7ptnV8Q6hk0VfszfHyyTQOCJ6dk77SCrrfggOIRinzZ_GUrMt2hSumXAHrnsqdLBXbfeaaCrvEV13mU2g1JIbYq0G8vYh4QfL2oVGysNd8nx1bFv4pCFnzggEVkP4druoeG7GmQ1wHP24tY7P79vXninjwfA9i3kkzuHZK8mFN0pMTy1DnrcEkz-m2k4VqbadfcxURbe79LKePIF9bDtkBmHFpS8");'
+              ></div>
+              <p class="text-[#111518] text-[13px] font-normal leading-normal">Fashion Week</p>
+            </a>
+            <!-- 스트릿 스타일 카테고리: 카테고리 상세 페이지로 연결 (div를 a 태그로 변경) -->
+            <a class="flex flex-1 flex-col justify-center gap-2 w-24 text-left" href="category-street-style.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/5] bg-cover rounded-xl"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZ_rDYnPsr6IIxzGzxvNi_Lus6lUF5VT-R8pslgvq5FvGmx6g0P9-c2mpAZoMrYgx9Nk4kGC1nN7yeBlKPNXzDExODmHpzhMc8bWDYfvl-t7YZc8MTEZ_isrPpsW3gdStudHchUg77N_AnhhFFLxCEaFC7NJfuh5ACaYulNGTqyyWJk6wHPE3oyj8yeSoKijWMKxzO39wkm12_8dbwfk2BzV5f-ANIM-mIQu5N39Xf7HTfznW5FUPJAUYJmyEIPoI74tzHlgb2tIg");'
+              ></div>
+              <p class="text-[#111518] text-[13px] font-normal leading-normal">Street Style</p>
+            </a>
+            <!-- 인플루언서 픽스 카테고리: 카테고리 상세 페이지로 연결 (div를 a 태그로 변경) -->
+            <a class="flex flex-1 flex-col justify-center gap-2 w-24 text-left" href="category-influencer-picks.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/5] bg-cover rounded-xl"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_XCuPElEq9EmsE_7pjGVMA6v3h5TMOoHddoJrTYhua7tXxYEp2e3hFywm4pfWcjfbq5cXb_rEtrKwgaLkqhW22itQ9cAsl2vJm8ohCmuC6tBGYJSca4lWo7ytfOaWDQPGFbSt42xHRNU1vT1vmfQ6Oh2XgG6d52Vx_xziXMnkUFsxQKM5bIrpL-MLGMZb_sLy2iMcuxMPP47fB8ZsxlsbhF8tI1mr0RLiZgWreZ5CmCjLH-LWPdNJ2KJuhxrBWJ0TtxWfRGST6Nk");'
+              ></div>
+              <p class="text-[#111518] text-[13px] font-normal leading-normal">Influencer Picks</p>
+            </a>
+            <!-- 런웨이 트렌드 카테고리: 카테고리 상세 페이지로 연결 (div를 a 태그로 변경) -->
+            <a class="flex flex-1 flex-col justify-center gap-2 w-24 text-left" href="category-runway-trends.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/5] bg-cover rounded-xl"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHPtZgSlmUluLpy2Cy6wsS_evXoxLxb-_lZ9TwAQTh7MiDan0BMa-3ggBBa8nZjJ5_W9yJp_G3ZmLgrWcpVLDUQJAzwYom95KJMSQgAeylzynypd0IlKA4doNVqeUhAX8YYvK5PcJUrW6rOsDJKACjKe6KiD7Rdrdwwshumg3kF7oY8iE5QZC-us0NJ15blrXN65emWg0LDHwc-hAMGX6GVGwI8dINmcu7hGdJrdgzR8sz5BtSH79zbMWjLNn3eDnEWYtPbHJK4Ns");'
+              ></div>
+              <p class="text-[#111518] text-[13px] font-normal leading-normal">Runway Trends</p>
+            </a>
+            <!-- 디자이너 스포트라이트 카테고리: 카테고리 상세 페이지로 연결 (div를 a 태그로 변경) -->
+            <a class="flex flex-1 flex-col justify-center gap-2 w-24 text-left" href="category-designer-spotlight.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/5] bg-cover rounded-xl"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxXzwLBiO4OtDmBaT4-aDoQ8MT4TUgC1a0zxxcSkNpCGSMTIDtz1mgYpzDKCALTUvfBQ6Tqj6BNmfHCE1pGTDFBUnQ-Aib9ZXOpKyBKLRgVyjjObQRvUg8A-1QZQ6nXl44TAIIHNu6upOOKBuVMn_MMBzkfMdNHSjZGEuzPV9OCpZutgo28hAcVrPQOWKEYk-B8bMrBi-lmgKPJorLenX39-i43I9x2se7V743OqhCGCizfV114g9TB7wnxWMOzXnpfvFZis6H8V4");'
+              ></div>
+              <p class="text-[#111518] text-[13px] font-normal leading-normal">Designer Spotlight</p>
+            </a>
+          </div>
+        </div>
+        <h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Featured Items</h2>
+        <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div class="flex items-stretch p-4 gap-3">
+            <!-- 각 상품: 상품 상세 페이지로 연결 (div를 a 태그로 변경) -->
+            <a class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40" href="product-elegant-evening-dress.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8R8Isnnhhx8f4bsiipSHSataML84HExKnCUU0eOn7XrNbKLIn9d9pAs-JRFaNRd3fpN76bhjIkuHyl5gXrHSTWRoHv4UiYfdIufrSX86uicg8-xPSmABjcwVTDqLvqSzT6Qw3jwTg9oaLnYIjmu2sHORKYpfblieEuV68G5FEWJi_1fNu5nM-e5vT5n3VIzhRp0wGeKc8QDws5JFH-lo603liOKsYqdX-NCUsSYssERdK2Hhg-25vNVae3w5DO75yZ23Bq1-_U7o");'
+              ></div>
+              <p class="text-[#111518] text-base font-medium leading-normal">Elegant Evening Dress</p>
+            </a>
+            <a class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40" href="product-urban-chic-jacket.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOqCkRAgf6NoZH3YEnJ2sg5fyq4oAo8DRwdn1Hy1fKeYuvpovx3YS2ozB4cv9D6sSVIvznzJSAQZTPKdeutsR92RCIowyeLoPgxjlvnq1_b9O2Jaa2VculttrjN7z_ui99OKfrB-ZHIyLSOimpdbbgwbPYui49a6ZuM1qH6cuxP7jrSVFYdKKnqEkQszADK5BvJrltBHbltVauCpdv7tmdJiPORJhbstbbHnUZbal4wyRXPxIMi-WZy8ihPfusaZEHuKR4wpsGUBE");'
+              ></div>
+              <p class="text-[#111518] text-base font-medium leading-normal">Urban Chic Jacket</p>
+            </a>
+            <a class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40" href="product-statement-sneakers.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAuxwNiXbq5aXDkf1sU8cboC-ozLNMUFiSIjW4tmYLHQiqgZikfYZrB3JFZjFumZHrbEP3QtfDmxnHFqd__hBiLqk8omwqS8WsrmwEKpAxIhh9JJ24F-_-IQA2Vk0n-hTc0XXgyRvykOfzAN1rWSI3tHNResuumleEPHTzYtmIrabtmHg9mlI_AG6zCsVH-UvCWJSvphBQbJIMCq3BhSXINx2pGTCnuGxh-sU-bUXjl3RKyQ6C4kNmVdKXKaG7U42jDeJ8ScQ0w064");'
+              ></div>
+              <p class="text-[#111518] text-base font-medium leading-normal">Statement Sneakers</p>
+            </a>
+            <a class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40" href="product-luxury-leather-tote.html">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8RxKPUmQrNwXdAW_mtr0DzqAjHQRdRlnZrS-SVESB6WqQIUoPe6w3qXk8PvoYMo94ZwSDZQ4UMFay5cPUb0kkuDhqLOY11C1HK1Hhu2WEfyNK9ZJgKqjJyYmLcL8HeNWxbjSzKUJgtnHEgUaI5e5cRhAwdIpRlkUvlpl7_YHmz1hkv_vHIJyl7UqtyJXWnV1sLrbfM9m-jG24xd8S2Ql9S_0yYNeXYdzN6YSM8oRoaR8rCrr1aFJG3iTdjA4VzmXV56maPPQAC-A");'
+              ></div>
+              <p class="text-[#111518] text-base font-medium leading-normal">Luxury Leather Tote</p>
+            </a>
+          </div>
+        </div>
+        <h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Popular Categories</h2>
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+          <!-- 각 인기 카테고리: 카테고리 상세 페이지로 연결 (div를 a 태그로 변경) -->
+          <a class="flex flex-col gap-3 pb-3" href="category-dresses.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgGXcWcv8uWMzlKYBfwjVgrtY6tinF6ADkSbshe2rXvBOX0pLVmrSug1leqs1JlvHXd4t1svtRGlWA9uv5ojO1UaAbVmR2d-HrgrueoJiQ84s3_xjIaQrTBbHSBp0ASRKd3d4cUVLqhZ20l3i_JSnw2mGXwNO7Hg5gYLe2WbeF9NGtvQTQ-e-K8aAGQCrWqIJOPWoqdgYwJfi-awHkAnHHakEw2qhvOSoeIHUBke3xjjc7OoUufb2ohZ5LcnPdtsAtWLUP4HnP_D8");'
+            ></div>
+            <p class="text-[#111518] text-base font-medium leading-normal">Dresses</p>
+          </a>
+          <a class="flex flex-col gap-3 pb-3" href="category-tops.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkXneIzSb3oZD7mU741Ns6OyGpyCsbYE2a6C8-NUocdtCfaYePCWERuhDD-bXxEXEcOVD8in5JGbTZslAxWY_kbo_i_sylEC2HheaEJl6Ni6_UHvYyblHhrBafgmw8igSyin31N6-4eHQDzihqd9oXGuVg6xt7tJH-pTtd1pYrqvxQZn9PIFF3cYX1lsUayDzETBY81yQBXEISAFfd1hKHGq85f0jHxTe4V4CclQbtFw-hnB6IHd5zJM4Aj0ohmoxoymKxvCWS900");'
+            ></div>
+            <p class="text-[#111518] text-base font-medium leading-normal">Tops</p>
+          </a>
+          <a class="flex flex-col gap-3 pb-3" href="category-bottoms.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwdSO7E6aBI59E3OklLPJATmUMPvZRLwQBgFfNEtsVA0czu2MDDGQPIygH3goxWvBLbYWx0qhEq7PeoibR6lX8_M3cwkf86WyOIEeJ1F1LPSqp-pyL90QfPCti_KBY8vfow7p05z6fJ4WgOZp4k4vhyrKHvusUwXA9rHfX3yFXluTUH85keIlHYyXebr0Hx8Qx6YoqJJS2U18rdi__7djPQYe-NpAb2iHPHb9BL5kS9Paq7pUj5Xw4pTXL8-pTn9_yjWkIseEBVdI");'
+            ></div>
+            <p class="text-[#111518] text-base font-medium leading-normal">Bottoms</p>
+          </a>
+          <a class="flex flex-col gap-3 pb-3" href="category-shoes.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5O4Oo31abA9XbuoXKVy1Q_jYYdU1bdps-JqJkJUm6JPH2pgibsPxUD71zRne6nj3XMPu_PqhTFExqI59IFOQMJOAY23osP4xcRbQYH5qVEGlNIXzGcTJdyHgZV48yn89EXDR4ix2scJ44a_Y3johnhID08KtAEmW8JF5FEqiDosSsDWjwyljFODH9_XrAVvE1sZ5OhrCi_eTirykxiWsjoke0PEOWCbt_FFgWb7aSO4ma4iHYQ4HyJHt2hEoHdeW0c20asJXzmN0");'
+            ></div>
+            <p class="text-[#111518] text-base font-medium leading-normal">Shoes</p>
+          </a>
+          <a class="flex flex-col gap-3 pb-3" href="category-accessories.html">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGOgRPWTJs7FpSZ9EzouWc8pSTeqvxLCT2ugTtvrERNCQVIuCUprtacFkrsH8z2iJYeFvrG9pYtgr0_YkB_3QQDVsw_-gAO1j5KHDBxqNqfvcV-Pp41QBHsUNEV863dtligL1nPE8osMJ4qeS0nexfSp6gPDh0SVOsvGLIbcOvM3iNEKUsGSs4n2LHBsYI9qaA5YlR1lrzVKhavfDf5hnfZfJ7tTjddxctJA6FH5nszbrGYcVN1BvqllknHlsCOKNTxGCvllIFXVQ");'
+            ></div>
+            <p class="text-[#111518] text-base font-medium leading-normal">Accessories</p>
+          </a>
+        </div>
+      </div>
+      <div>
+                <div class="flex gap-2 border-t border-[#f0f2f5] bg-white px-4 pb-3 pt-2">
+          <!-- 하단 내비게이션 - Home -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="index.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+          </a>
+          <!-- 하단 내비게이션 - Search -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="search.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Search</p>
+          </a>
+          <!-- 하단 내비게이션 - Upload (현재 페이지와 관련) -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#111518]" href="upload_image.html">
+            <div class="text-[#111518] flex h-8 items-center justify-center" data-icon="Camera" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#111518] text-xs font-medium leading-normal tracking-[0.015em]">Upload</p>
+          </a>
+          <!-- 하단 내비게이션 - Favorites -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="favorites.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="Heart" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Favorites</p>
+          </a>
+          <!-- 하단 내비게이션 - Profile -->
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#60768a]" href="profile.html">
+            <div class="text-[#60768a] flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#60768a] text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+          </a>
+        </div>
+        <div class="h-5 bg-white"></div>
+      </div>
+    </div>
+  </body>
+</html>
